@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <title>Formulario</title>
+</head>
+<body>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../../Scripts/jquery-3.4.1.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../../Scripts/script1.js"></script>
+
+    <form name="frmDatos" action="insertarDatos.asp" method="post">
+        <table>
+            <tr>
+                <td>Nombre</td>
+                <td><input name="txtNombre" id="txtNombre" type="text" value="" onblur="noEmpty('txtNombre')" onkeyup="noSpaces(this, 'txtNombre')"/></td>
+
+            </tr>
+            <tr>
+                <td>Dirección</td>
+                <td><input name="txtDireccion" id="txtDireccion" type="text" value="" onblur="noEmpty('txtDireccion')"/></td>
+            </tr>
+            <tr>
+                <td>Edad</td>
+                <td><input name="txtEdad" id="txtEdad" type="text" value="" onblur="noEmpty('txtEdad')" onkeyup="edadCorrecta(this, 'txtEdad')"/></td>
+            </tr>
+            <tr>
+                <td>Correo</td>
+                <td><input name="txtCorreo" id="txtCorreo" type="text" value="" onblur="noEmpty('txtCorreo')"/></td>
+            </tr>
+            <tr>
+                <td>Habilidad Principal</td>
+                <td><input name="txtHPrincipal" id="txtHPrincipal" type="text" value="" onblur="noEmpty('txtHPrincipal')"/></td>
+            </tr>
+            <tr>
+                <td>Habilidad Secundaria</td>
+                <td><input name="txtHSecundaria" id="txtHSecundaria" type="text" value="" onblur="noEmpty('txtHSecundaria')"/></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+    </form>
+</body>

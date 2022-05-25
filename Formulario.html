@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Formulario</title>
+</head>
+<body>
+    <form name="frmDatos" action="insertarDatos.asp" method="post">
+        <table>
+            <tr>
+                <td>Nombre</td>
+                <td><input name="Nombre" id="txtNombre" type="text" value="" onblur="required()"/></td>
+            </tr>
+            <tr>
+                <td>Dirección</td>
+                <td><input name="txtDireccion" type="text" value="" /></td>
+            </tr>
+            <tr>
+                <td>Edad</td>
+                <td><input name="txtEdad" type="text" value="" /></td>
+            </tr>
+            <tr>
+                <td>Correo</td>
+                <td><input name="txtCorreo" type="text" value="" /></td>
+            </tr>
+            <tr>
+                <td>Habilidad Principal</td>
+                <td><input name="txtHPrincipal" type="text" value="" /></td>
+            </tr>
+            <tr>
+                <td>Habilidad Secundaria</td>
+                <td><input name="txtHSecundaria" type="text" value="" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Submit"/></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
+
+
+<script src="../../Scripts/jquery-3.4.1.js" type="text/javascript"></script>
+<script src="../../Scripts/jquery-3.4.1.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    //function VacioValidation(inputtxt) {
+    //    if (inputtxt.value.length == 0) {
+    //        /*document.inputtxt.style.background = 'Red';*/
+    //        $("#txtNombre").css("border-color", "red");
+    //    }
+    //    else {
+    //        /*document.inputtxt.style.background = 'White';*/
+    //        $("#txtNombre").css("border-color", "green");
+    //    }
+    //    return error;
+    //}
+
+    function required() {
+        /*var empt = document.forms["frmDatos"]["txtNombre"].value;*/
+        var empt = document.getElementById("txtNombre");
+        if (empt == "" || empt == null) {
+            /*alert("Please input a Value");*/
+            $("#txtNombre").css("border-color", "red");
+            return false;
+        }
+        else {
+            /*alert('Code has accepted : you can try another');*/
+            $("#txtNombre").css("border-color", "green");
+            return true;
+        }
+    }
+
+
+    function noEspacios(e, id) {
+
+        //JavaScript
+        //var txtApellidoPaterno1 = document.getElementById('txtApellidoPaterno');//Llamada por ID
+        //var txtApellidoPaterno2 = document.getElementsByClassName('txtApellidoPaterno');//Llamada por Class
+        ////jQuery
+        //var txtApellidoPaterno3 = $("#txtApellidoPaterno");//Llamada por ID
+        //var txtApellidoPaterno4 = $(".txtApellidoPaterno");//Llamada por Clase
+
+        var caracter = e.onkeypress.arguments[0].key;
+        if (!/[^a-zA-Z/\s/]/.test(caracter)) {
+            $("#" + id).html('');
+            return true;
+        }
+        else {
+            $("#" + id).html('Solo se aceptan letras');
+            return false;
+        }
+    }
+
+
+</script>
